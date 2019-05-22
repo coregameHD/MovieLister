@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <bean id="movieLister" class="MovieLister"/>
+
+  <!-- Database File Path (macOS): "/Users/{username}/IdeaProjects/SpringProject/src/res/movie.txt" -->
+  <bean id="tabDelimitedMovieFinder" class="TabDelimitedMovieFinder">
+    <constructor-arg index="0" value="./src/res/movies.txt" />
+  </bean>
+
+  <bean id="DatabaseMovieFinder" class="DatabaseMovieFinder">
+    <constructor-arg index="0" value="./src/res/movies.db" />
+  </bean>
+
+</beans>
